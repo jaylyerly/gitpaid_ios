@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A4C50C11C58714900F7092C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C50C01C58714900F7092C /* AppDelegate.swift */; };
+		0A4C50C81C58714900F7092C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C50C71C58714900F7092C /* Assets.xcassets */; };
+		0A4C50CB1C58714900F7092C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C50C91C58714900F7092C /* LaunchScreen.storyboard */; };
+		0A4C50D61C58714900F7092C /* GitPaidChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C50D51C58714900F7092C /* GitPaidChallengeTests.swift */; };
+		0A4C50E11C58714900F7092C /* GitPaidChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C50E01C58714900F7092C /* GitPaidChallengeUITests.swift */; };
+		0A4C50EF1C58716B00F7092C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C50EE1C58716B00F7092C /* Main.storyboard */; };
+		0A4C50F31C58717900F7092C /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C50F01C58717900F7092C /* JobTableViewCell.swift */; };
+		0A4C50F41C58717900F7092C /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C50F11C58717900F7092C /* Jobs.swift */; };
+		0A4C50F51C58717900F7092C /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C50F21C58717900F7092C /* APIHandler.swift */; };
+		0A4C50F71C58719200F7092C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C50F61C58719200F7092C /* ViewController.swift */; };
+		0A4C510A1C5888F900F7092C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C51091C5888F900F7092C /* DetailViewController.swift */; };
+		0A4C510D1C5899F400F7092C /* Job.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C510B1C5899F400F7092C /* Job.xcdatamodeld */; };
+		0A4C514C1C58A8A000F7092C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C514B1C58A8A000F7092C /* Reachability.swift */; };
+		D7B44E3E8A413D803A67B269 /* Pods_GitPaidChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14202F7B94A54F6EB3E240A /* Pods_GitPaidChallenge.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A4C50D21C58714900F7092C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A4C50B51C58714900F7092C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A4C50BC1C58714900F7092C;
+			remoteInfo = GitPaidChallenge;
+		};
+		0A4C50DD1C58714900F7092C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A4C50B51C58714900F7092C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A4C50BC1C58714900F7092C;
+			remoteInfo = GitPaidChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A4C50BD1C58714900F7092C /* GitPaidChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitPaidChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4C50C01C58714900F7092C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A4C50C71C58714900F7092C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A4C50CA1C58714900F7092C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0A4C50CC1C58714900F7092C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A4C50D11C58714900F7092C /* GitPaidChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitPaidChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4C50D51C58714900F7092C /* GitPaidChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitPaidChallengeTests.swift; sourceTree = "<group>"; };
+		0A4C50D71C58714900F7092C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A4C50DC1C58714900F7092C /* GitPaidChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitPaidChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4C50E01C58714900F7092C /* GitPaidChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitPaidChallengeUITests.swift; sourceTree = "<group>"; };
+		0A4C50E21C58714900F7092C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A4C50EE1C58716B00F7092C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0A4C50F01C58717900F7092C /* JobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
+		0A4C50F11C58717900F7092C /* Jobs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		0A4C50F21C58717900F7092C /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		0A4C50F61C58719200F7092C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A4C51091C5888F900F7092C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0A4C510C1C5899F400F7092C /* Job.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Job.xcdatamodel; sourceTree = "<group>"; };
+		0A4C514B1C58A8A000F7092C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		8E9AAEF68B4066D2DD489143 /* Pods-GitPaidChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPaidChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPaidChallenge/Pods-GitPaidChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		C91E8EFA2EBE093193D7B39E /* Pods-GitPaidChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPaidChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPaidChallenge/Pods-GitPaidChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		F14202F7B94A54F6EB3E240A /* Pods_GitPaidChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitPaidChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A4C50BA1C58714900F7092C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B44E3E8A413D803A67B269 /* Pods_GitPaidChallenge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A4C50CE1C58714900F7092C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A4C50D91C58714900F7092C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A4C50B41C58714900F7092C = {
+			isa = PBXGroup;
+			children = (
+				0A4C50BF1C58714900F7092C /* GitPaidChallenge */,
+				0A4C50D41C58714900F7092C /* GitPaidChallengeTests */,
+				0A4C50DF1C58714900F7092C /* GitPaidChallengeUITests */,
+				0A4C50BE1C58714900F7092C /* Products */,
+				DF8F874A7AC0AE85CF083296 /* Pods */,
+				E0B52FB6BE542F6503A68C0B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0A4C50BE1C58714900F7092C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A4C50BD1C58714900F7092C /* GitPaidChallenge.app */,
+				0A4C50D11C58714900F7092C /* GitPaidChallengeTests.xctest */,
+				0A4C50DC1C58714900F7092C /* GitPaidChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A4C50BF1C58714900F7092C /* GitPaidChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				0A4C514B1C58A8A000F7092C /* Reachability.swift */,
+				0A4C50F61C58719200F7092C /* ViewController.swift */,
+				0A4C50F01C58717900F7092C /* JobTableViewCell.swift */,
+				0A4C50F11C58717900F7092C /* Jobs.swift */,
+				0A4C50F21C58717900F7092C /* APIHandler.swift */,
+				0A4C50C01C58714900F7092C /* AppDelegate.swift */,
+				0A4C50EE1C58716B00F7092C /* Main.storyboard */,
+				0A4C50C71C58714900F7092C /* Assets.xcassets */,
+				0A4C51091C5888F900F7092C /* DetailViewController.swift */,
+				0A4C50C91C58714900F7092C /* LaunchScreen.storyboard */,
+				0A4C50CC1C58714900F7092C /* Info.plist */,
+				0A4C510B1C5899F400F7092C /* Job.xcdatamodeld */,
+			);
+			path = GitPaidChallenge;
+			sourceTree = "<group>";
+		};
+		0A4C50D41C58714900F7092C /* GitPaidChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0A4C50D51C58714900F7092C /* GitPaidChallengeTests.swift */,
+				0A4C50D71C58714900F7092C /* Info.plist */,
+			);
+			path = GitPaidChallengeTests;
+			sourceTree = "<group>";
+		};
+		0A4C50DF1C58714900F7092C /* GitPaidChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0A4C50E01C58714900F7092C /* GitPaidChallengeUITests.swift */,
+				0A4C50E21C58714900F7092C /* Info.plist */,
+			);
+			path = GitPaidChallengeUITests;
+			sourceTree = "<group>";
+		};
+		DF8F874A7AC0AE85CF083296 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C91E8EFA2EBE093193D7B39E /* Pods-GitPaidChallenge.debug.xcconfig */,
+				8E9AAEF68B4066D2DD489143 /* Pods-GitPaidChallenge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E0B52FB6BE542F6503A68C0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F14202F7B94A54F6EB3E240A /* Pods_GitPaidChallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A4C50BC1C58714900F7092C /* GitPaidChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A4C50E51C58714900F7092C /* Build configuration list for PBXNativeTarget "GitPaidChallenge" */;
+			buildPhases = (
+				2A9CEDF9DF3542C63B9E4ACE /* Check Pods Manifest.lock */,
+				0A4C50B91C58714900F7092C /* Sources */,
+				0A4C50BA1C58714900F7092C /* Frameworks */,
+				0A4C50BB1C58714900F7092C /* Resources */,
+				AA08C38311D5C1824D149E84 /* Embed Pods Frameworks */,
+				E909C9D24334FD30A2A22F92 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GitPaidChallenge;
+			productName = GitPaidChallenge;
+			productReference = 0A4C50BD1C58714900F7092C /* GitPaidChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0A4C50D01C58714900F7092C /* GitPaidChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A4C50E81C58714900F7092C /* Build configuration list for PBXNativeTarget "GitPaidChallengeTests" */;
+			buildPhases = (
+				0A4C50CD1C58714900F7092C /* Sources */,
+				0A4C50CE1C58714900F7092C /* Frameworks */,
+				0A4C50CF1C58714900F7092C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A4C50D31C58714900F7092C /* PBXTargetDependency */,
+			);
+			name = GitPaidChallengeTests;
+			productName = GitPaidChallengeTests;
+			productReference = 0A4C50D11C58714900F7092C /* GitPaidChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0A4C50DB1C58714900F7092C /* GitPaidChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A4C50EB1C58714900F7092C /* Build configuration list for PBXNativeTarget "GitPaidChallengeUITests" */;
+			buildPhases = (
+				0A4C50D81C58714900F7092C /* Sources */,
+				0A4C50D91C58714900F7092C /* Frameworks */,
+				0A4C50DA1C58714900F7092C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A4C50DE1C58714900F7092C /* PBXTargetDependency */,
+			);
+			name = GitPaidChallengeUITests;
+			productName = GitPaidChallengeUITests;
+			productReference = 0A4C50DC1C58714900F7092C /* GitPaidChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A4C50B51C58714900F7092C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Chinny Sharma";
+				TargetAttributes = {
+					0A4C50BC1C58714900F7092C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					0A4C50D01C58714900F7092C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 0A4C50BC1C58714900F7092C;
+					};
+					0A4C50DB1C58714900F7092C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 0A4C50BC1C58714900F7092C;
+					};
+				};
+			};
+			buildConfigurationList = 0A4C50B81C58714900F7092C /* Build configuration list for PBXProject "GitPaidChallenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A4C50B41C58714900F7092C;
+			productRefGroup = 0A4C50BE1C58714900F7092C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A4C50BC1C58714900F7092C /* GitPaidChallenge */,
+				0A4C50D01C58714900F7092C /* GitPaidChallengeTests */,
+				0A4C50DB1C58714900F7092C /* GitPaidChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A4C50BB1C58714900F7092C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A4C50CB1C58714900F7092C /* LaunchScreen.storyboard in Resources */,
+				0A4C50C81C58714900F7092C /* Assets.xcassets in Resources */,
+				0A4C50EF1C58716B00F7092C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A4C50CF1C58714900F7092C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A4C50DA1C58714900F7092C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A9CEDF9DF3542C63B9E4ACE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA08C38311D5C1824D149E84 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitPaidChallenge/Pods-GitPaidChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E909C9D24334FD30A2A22F92 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitPaidChallenge/Pods-GitPaidChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A4C50B91C58714900F7092C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A4C50F71C58719200F7092C /* ViewController.swift in Sources */,
+				0A4C50F31C58717900F7092C /* JobTableViewCell.swift in Sources */,
+				0A4C50F51C58717900F7092C /* APIHandler.swift in Sources */,
+				0A4C510A1C5888F900F7092C /* DetailViewController.swift in Sources */,
+				0A4C50C11C58714900F7092C /* AppDelegate.swift in Sources */,
+				0A4C510D1C5899F400F7092C /* Job.xcdatamodeld in Sources */,
+				0A4C514C1C58A8A000F7092C /* Reachability.swift in Sources */,
+				0A4C50F41C58717900F7092C /* Jobs.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A4C50CD1C58714900F7092C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A4C50D61C58714900F7092C /* GitPaidChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A4C50D81C58714900F7092C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A4C50E11C58714900F7092C /* GitPaidChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A4C50D31C58714900F7092C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A4C50BC1C58714900F7092C /* GitPaidChallenge */;
+			targetProxy = 0A4C50D21C58714900F7092C /* PBXContainerItemProxy */;
+		};
+		0A4C50DE1C58714900F7092C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A4C50BC1C58714900F7092C /* GitPaidChallenge */;
+			targetProxy = 0A4C50DD1C58714900F7092C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0A4C50C91C58714900F7092C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A4C50CA1C58714900F7092C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0A4C50E31C58714900F7092C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A4C50E41C58714900F7092C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0A4C50E61C58714900F7092C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91E8EFA2EBE093193D7B39E /* Pods-GitPaidChallenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GitPaidChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inverse.GitPaidChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0A4C50E71C58714900F7092C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E9AAEF68B4066D2DD489143 /* Pods-GitPaidChallenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GitPaidChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inverse.GitPaidChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0A4C50E91C58714900F7092C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GitPaidChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inverse.GitPaidChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitPaidChallenge.app/GitPaidChallenge";
+			};
+			name = Debug;
+		};
+		0A4C50EA1C58714900F7092C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GitPaidChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inverse.GitPaidChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitPaidChallenge.app/GitPaidChallenge";
+			};
+			name = Release;
+		};
+		0A4C50EC1C58714900F7092C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GitPaidChallengeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inverse.GitPaidChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GitPaidChallenge;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		0A4C50ED1C58714900F7092C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GitPaidChallengeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inverse.GitPaidChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GitPaidChallenge;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A4C50B81C58714900F7092C /* Build configuration list for PBXProject "GitPaidChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A4C50E31C58714900F7092C /* Debug */,
+				0A4C50E41C58714900F7092C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A4C50E51C58714900F7092C /* Build configuration list for PBXNativeTarget "GitPaidChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A4C50E61C58714900F7092C /* Debug */,
+				0A4C50E71C58714900F7092C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A4C50E81C58714900F7092C /* Build configuration list for PBXNativeTarget "GitPaidChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A4C50E91C58714900F7092C /* Debug */,
+				0A4C50EA1C58714900F7092C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A4C50EB1C58714900F7092C /* Build configuration list for PBXNativeTarget "GitPaidChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A4C50EC1C58714900F7092C /* Debug */,
+				0A4C50ED1C58714900F7092C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A4C510B1C5899F400F7092C /* Job.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A4C510C1C5899F400F7092C /* Job.xcdatamodel */,
+			);
+			currentVersion = 0A4C510C1C5899F400F7092C /* Job.xcdatamodel */;
+			path = Job.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0A4C50B51C58714900F7092C /* Project object */;
+}
