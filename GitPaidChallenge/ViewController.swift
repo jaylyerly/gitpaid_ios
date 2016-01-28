@@ -501,7 +501,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //hide search fields and requery for default results
     func resetSearch() {
-        self.locationButton.setImage(UIImage(named: "ic_icon_location_green"), forState: .Normal)
+        self.locationButton.setImage(UIImage(named: "ic_icon_location_grey"), forState: .Normal)
         self.currentLocation = false
         self.descriptionSearchBar.text = ""
         self.locationSearchBar.text = ""
