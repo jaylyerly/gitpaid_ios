@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var gridListButton: UIButton! //show results in a grid or list
     @IBOutlet weak var locationButton: UIButton! //show results near you
     
-    
+    let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     var refreshControl2:UIRefreshControl! //refresh the results on tableview or gridview
     var refreshControl:UIRefreshControl! //refresh the results on tableview or gridview
     var viewType = "list" //globalvariable to indicate what kind of a layout is being used
@@ -75,6 +75,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.jobsTableView.addSubview(refreshControl2)
         
         
+        //loading bar
+        indicator.center = view.center
+        view.addSubview(indicator)
+        
         // set up location services by asking for permission then checking if its enabled
         self.locationManager.requestWhenInUseAuthorization()
         
@@ -94,6 +98,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("networkStatusChanged:"), name: ReachabilityStatusChangedNotification, object: nil)
         Reach().monitorReachabilityChanges()
         
+        //call the initial data for the table
+        let status = Reach().connectionStatus()
+        switch status {
+        case .Unknown, .Offline:
+            //if app offline on launch, load core data
+            reloadFromCore()
+        case .Online(.WWAN):
+            //begin with default url
+            reloadData(currentURL)
+        case .Online(.WiFi):
+            //begin with default url
+            reloadData(currentURL)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -110,21 +128,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func refresh2(sender:AnyObject){
         reloadData(currentURL)
         refreshControl.endRefreshing()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        let status = Reach().connectionStatus()
-        switch status {
-        case .Unknown, .Offline:
-            //if app offline on launch, load core data
-            reloadFromCore()
-        case .Online(.WWAN):
-            //begin with default url
-            reloadData(currentURL)
-        case .Online(.WiFi):
-            //begin with default url
-            reloadData(currentURL)
-        }
     }
     
     func networkStatusChanged(notification: NSNotification) {
@@ -175,6 +178,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func getResults(url: String) {
+        self.indicator.startAnimating()
         self.view.userInteractionEnabled = false
         helper.getFeed(url) { (results) -> Void in
             self.jobs = results
@@ -182,6 +186,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.jobsTableView.reloadData()
             self.jobsCollectionView.reloadData()
             self.view.userInteractionEnabled = true
+            self.indicator.stopAnimating()
             //load in images after table data loaded to make the url request and save the image to the Job object and then successfully save to core data
             self.loadImages({ (results) -> Void in
                 self.deleteJobs()
