@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//set up the job object
 class Job: NSObject {
     var title: String
     var company : String
@@ -20,6 +21,7 @@ class Job: NSObject {
     var id: String
     var createdAt: String
     var jobDescription: String
+    var logo : UIImage?
     
     init (title: String, company: String, companyUrl: String, jobUrl: String, logoUrl: String, location: String, type: String, id: String, createdAt: String, jobDescription: String) {
         self.title = title

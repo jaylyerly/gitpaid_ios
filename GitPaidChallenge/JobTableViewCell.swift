@@ -10,9 +10,9 @@ import UIKit
 
 class JobTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var company: UILabel!
+    @IBOutlet weak var logo: UIImageView! //image holder for the company logo
+    @IBOutlet weak var title: UILabel! //label holder for the position title
+    @IBOutlet weak var company: UILabel! //label holder for the company name
     
     
     

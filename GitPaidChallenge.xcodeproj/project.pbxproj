@@ -20,6 +20,8 @@
 		0A4C510A1C5888F900F7092C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C51091C5888F900F7092C /* DetailViewController.swift */; };
 		0A4C510D1C5899F400F7092C /* Job.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C510B1C5899F400F7092C /* Job.xcdatamodeld */; };
 		0A4C514C1C58A8A000F7092C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C514B1C58A8A000F7092C /* Reachability.swift */; };
+		0A4C51C81C59635C00F7092C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C51C71C59635C00F7092C /* Colors.swift */; };
+		0A4C51CA1C59C79600F7092C /* JobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C51C91C59C79600F7092C /* JobCollectionViewCell.swift */; };
 		D7B44E3E8A413D803A67B269 /* Pods_GitPaidChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14202F7B94A54F6EB3E240A /* Pods_GitPaidChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		0A4C51091C5888F900F7092C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0A4C510C1C5899F400F7092C /* Job.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Job.xcdatamodel; sourceTree = "<group>"; };
 		0A4C514B1C58A8A000F7092C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		0A4C51C71C59635C00F7092C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0A4C51C91C59C79600F7092C /* JobCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobCollectionViewCell.swift; path = ../JobCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E9AAEF68B4066D2DD489143 /* Pods-GitPaidChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPaidChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPaidChallenge/Pods-GitPaidChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		C91E8EFA2EBE093193D7B39E /* Pods-GitPaidChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPaidChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPaidChallenge/Pods-GitPaidChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		F14202F7B94A54F6EB3E240A /* Pods_GitPaidChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitPaidChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,18 +120,9 @@
 		0A4C50BF1C58714900F7092C /* GitPaidChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				0A4C514B1C58A8A000F7092C /* Reachability.swift */,
-				0A4C50F61C58719200F7092C /* ViewController.swift */,
-				0A4C50F01C58717900F7092C /* JobTableViewCell.swift */,
-				0A4C50F11C58717900F7092C /* Jobs.swift */,
-				0A4C50F21C58717900F7092C /* APIHandler.swift */,
-				0A4C50C01C58714900F7092C /* AppDelegate.swift */,
-				0A4C50EE1C58716B00F7092C /* Main.storyboard */,
-				0A4C50C71C58714900F7092C /* Assets.xcassets */,
-				0A4C51091C5888F900F7092C /* DetailViewController.swift */,
-				0A4C50C91C58714900F7092C /* LaunchScreen.storyboard */,
-				0A4C50CC1C58714900F7092C /* Info.plist */,
-				0A4C510B1C5899F400F7092C /* Job.xcdatamodeld */,
+				0A4C51CE1C59EF1500F7092C /* Views */,
+				0A4C51CD1C59EEF700F7092C /* Support Files */,
+				0A4C51CB1C59EECC00F7092C /* UI */,
 			);
 			path = GitPaidChallenge;
 			sourceTree = "<group>";
@@ -148,6 +143,49 @@
 				0A4C50E21C58714900F7092C /* Info.plist */,
 			);
 			path = GitPaidChallengeUITests;
+			sourceTree = "<group>";
+		};
+		0A4C51CB1C59EECC00F7092C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0A4C50C71C58714900F7092C /* Assets.xcassets */,
+				0A4C50C91C58714900F7092C /* LaunchScreen.storyboard */,
+				0A4C50EE1C58716B00F7092C /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		0A4C51CC1C59EEE200F7092C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A4C51C91C59C79600F7092C /* JobCollectionViewCell.swift */,
+				0A4C50F01C58717900F7092C /* JobTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		0A4C51CD1C59EEF700F7092C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A4C50F11C58717900F7092C /* Jobs.swift */,
+				0A4C50F21C58717900F7092C /* APIHandler.swift */,
+				0A4C50CC1C58714900F7092C /* Info.plist */,
+				0A4C514B1C58A8A000F7092C /* Reachability.swift */,
+				0A4C510B1C5899F400F7092C /* Job.xcdatamodeld */,
+				0A4C50C01C58714900F7092C /* AppDelegate.swift */,
+				0A4C51C71C59635C00F7092C /* Colors.swift */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		0A4C51CE1C59EF1500F7092C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A4C51CC1C59EEE200F7092C /* Cells */,
+				0A4C50F61C58719200F7092C /* ViewController.swift */,
+				0A4C51091C5888F900F7092C /* DetailViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		DF8F874A7AC0AE85CF083296 /* Pods */ = {
@@ -350,6 +388,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A4C50F71C58719200F7092C /* ViewController.swift in Sources */,
+				0A4C51C81C59635C00F7092C /* Colors.swift in Sources */,
+				0A4C51CA1C59C79600F7092C /* JobCollectionViewCell.swift in Sources */,
 				0A4C50F31C58717900F7092C /* JobTableViewCell.swift in Sources */,
 				0A4C50F51C58717900F7092C /* APIHandler.swift in Sources */,
 				0A4C510A1C5888F900F7092C /* DetailViewController.swift in Sources */,

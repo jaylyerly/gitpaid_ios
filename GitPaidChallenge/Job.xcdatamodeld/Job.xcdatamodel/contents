@@ -8,11 +8,12 @@
         <attribute name="jobDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="jobUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="logoUrl" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="logo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="logoUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Job" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Job" positionX="-63" positionY="-18" width="128" height="210"/>
     </elements>
 </model>

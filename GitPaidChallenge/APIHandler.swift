@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import Alamofire
 
-
+//using alamofire to make the api call to git and then save the results into Job objects
 public class JobCaller: NSObject {
     var jobEntries: [Job] = []
     func getFeed(url: String, onComplete : (results :[Job]) -> Void) {
