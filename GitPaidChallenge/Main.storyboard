@@ -175,14 +175,14 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="WOb-g8-uea"/>
-                                                <exclude reference="cBZ-Aw-phg"/>
-                                                <exclude reference="dOC-KS-REe"/>
                                                 <exclude reference="BeZ-c9-HHh"/>
                                                 <exclude reference="AEw-J8-I3j"/>
                                                 <exclude reference="h2b-3E-qVz"/>
                                                 <exclude reference="ugd-a4-omD"/>
                                                 <exclude reference="whv-Vv-yed"/>
+                                                <exclude reference="WOb-g8-uea"/>
+                                                <exclude reference="cBZ-Aw-phg"/>
+                                                <exclude reference="dOC-KS-REe"/>
                                             </mask>
                                         </variation>
                                         <connections>

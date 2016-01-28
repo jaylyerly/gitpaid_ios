@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var locationButton: UIButton! //show results near you
     
     
+    var refreshControl2:UIRefreshControl! //refresh the results on tableview or gridview
     var refreshControl:UIRefreshControl! //refresh the results on tableview or gridview
     var viewType = "list" //globalvariable to indicate what kind of a layout is being used
     var currentLocation = false //global variable to indicate whether the current location finder is turned on
@@ -67,8 +68,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //set up refresh control and add to tablew and collection
         self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.jobsTableView.addSubview(refreshControl)
         self.jobsCollectionView.addSubview(refreshControl)
+        
+        self.refreshControl2 = UIRefreshControl()
+        self.refreshControl2.addTarget(self, action: "refresh2:", forControlEvents: UIControlEvents.ValueChanged)
+        self.jobsTableView.addSubview(refreshControl2)
+        
         
         // set up location services by asking for permission then checking if its enabled
         self.locationManager.requestWhenInUseAuthorization()
@@ -98,6 +103,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //refresh the current query from current url
     func refresh(sender:AnyObject){
+        reloadData(currentURL)
+        refreshControl.endRefreshing()
+    }
+    
+    func refresh2(sender:AnyObject){
         reloadData(currentURL)
         refreshControl.endRefreshing()
     }
@@ -165,12 +175,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func getResults(url: String) {
+        self.view.userInteractionEnabled = false
         helper.getFeed(url) { (results) -> Void in
             self.jobs = results
             //reload views (both) for fast toggling between type of view
             self.jobsTableView.reloadData()
             self.jobsCollectionView.reloadData()
-            
+            self.view.userInteractionEnabled = true
             //load in images after table data loaded to make the url request and save the image to the Job object and then successfully save to core data
             self.loadImages({ (results) -> Void in
                 self.deleteJobs()
@@ -438,10 +449,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return true
     }
     
+    
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if self.descriptionSearchBar.text == "" || self.locationSearchBar.text == "" {
-            
+        if self.descriptionSearchBar.text == "" && self.locationSearchBar.text == "" {
             //check if both fields were cleared and reload default values
             self.reloadData(defaultURL)
             if currentLocation == true {
@@ -450,12 +461,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }else if searchBar == self.descriptionSearchBar {
             //if description cleared rebuild url because location might not be empty and reload results removing description from param
-            if searchText == "" {
+            if self.descriptionSearchBar == "" {
                 buildURL()
             }
         }else if searchBar == self.locationSearchBar {
             //if location cleared build url because description might not be empty and reload results removing location from param
-            if searchText == "" {
+            if self.locationSearchBar == "" {
                 buildURL()
             }
         }
@@ -485,6 +496,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //hide search fields and requery for default results
     func resetSearch() {
+        self.locationButton.setImage(UIImage(named: "ic_icon_location_green"), forState: .Normal)
+        self.currentLocation = false
         self.descriptionSearchBar.text = ""
         self.locationSearchBar.text = ""
         self.reloadData(defaultURL)
