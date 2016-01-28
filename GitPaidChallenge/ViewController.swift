@@ -127,7 +127,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func refresh2(sender:AnyObject){
         reloadData(currentURL)
-        refreshControl.endRefreshing()
+        refreshControl2.endRefreshing()
     }
     
     func networkStatusChanged(notification: NSNotification) {
