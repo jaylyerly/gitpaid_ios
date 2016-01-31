@@ -25,14 +25,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     var refreshControl2:UIRefreshControl! //refresh the results on tableview or gridview
+    // You can just create the refresh control here and use let, like this:
+    // let refreshControl2 = UIRefreshControl()
+    // Immutability, yay!
+    
+    // Also, refreshControl and refreshControl2 are horrible names.  Which is which?
+    // How about tableRefreshControl and collectionRefreshControl?
+    
     var refreshControl:UIRefreshControl! //refresh the results on tableview or gridview
     var viewType = "list" //globalvariable to indicate what kind of a layout is being used
+    // If you're going to have 'modes' like this, it's more appropriate to use an enum, rather than a 
+    // raw string.  Enums get you more compile time checks and prevent silly bugs, like a typo
+    // where you set viewType to "lsit"
+    
     var currentLocation = false //global variable to indicate whether the current location finder is turned on
     var searchBar = false //global variable to indicate whether the search bar is visible or not
+    // Naming wise, I would change these a little.  I would expect searchBar to be the name of the searchBar 
+    // object and currentLocation to be a CLLocation object.  Booleans should have names that make sense in
+    // the context of an if statemnt, like 'if isSearchBarVisible' and 'if currentLocationEnabled'.
+    // That code is easier to read/understand and the naming implies that it's a boolean.
+    
     var myLatitude = "" //save current position latitude globally in case wifi/gps lost
     var myLongitude = "" //save current position longitude globally in case wifi/gps lost
+    
     var results = [NSManagedObject]() //core data results
     var myLocations: [CLLocation] = [] //collection locations in background
+    // If I were a crazy person, the fact that these two array declaration done in different styles
+    // would bug me.  Good thing I'm well adjusted.
+    
     let locationManager = CLLocationManager() //manage the location collector
     var jobs = [Job]() //contain the Job object from the api and local data store
     var helper = JobCaller() //instantiate api manager
@@ -269,7 +289,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func convertToJobs(coreData: [NSManagedObject], onComplete : (results :[Job]) -> Void)  {
         self.jobs = []
         for item in self.results {
-            var title = ""
+            
+            // All of this can be expressed as a single line per attribute.
+            // This keeps stuff logical and visually togehter and 
+            // (more importantly) allows you to use 'let' to convey to the compiler
+            // and other coders that this is immutabile.
+            let title = item.valueForKey("title") as? String ?? ""
+            
+            
             var company = ""
             var companyUrl = ""
             var logoUrl = ""
@@ -281,9 +308,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             var createdAt = ""
             var logo : UIImage?
             
-            if let titleTmp = item.valueForKey("title") as? String {
-                title = titleTmp
-            }
             if let companyTmp = item.valueForKey("company") as? String {
                 company = companyTmp
             }
@@ -327,7 +351,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: delete core data before saving
     func deleteJobs() {
-        let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
+        // One option here is to use guard (could also use 'if let')
+        guard let appDel = UIApplication.sharedApplication().delegate as? AppDelegate else {
+            return;
+        }
+        
         let context = appDel.managedObjectContext
         let coord = appDel.persistentStoreCoordinator
         
@@ -335,6 +363,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let fetchRequest = NSFetchRequest(entityName: "Job")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
+        // try/catch -- Sweet!
         do {
             try coord.executeRequest(deleteRequest, withContext: context)
         } catch let error as NSError {
@@ -369,14 +398,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         job.setValue(item.id, forKey: "id")
         job.setValue(item.jobUrl, forKey: "jobUrl")
         job.setValue(item.logoUrl, forKey: "logoUrl")
-        if item.logo != nil {
-            guard let imageData = UIImageJPEGRepresentation(item.logo!, 1) else {
-                // handle failed conversion
-                print("jpg error")
-                return
-            }
-            job.setValue(imageData, forKey: "logo")
+
+        // Guard is a little weird here.  It's usually used as a precondition 
+        // check early in a routine to bail if requirements aren't met.
+        // Instead consider
+        
+        if let logo = item.logo, imgData = UIImageJPEGRepresentation(logo, 1.0) {
+            job.setValue(imgData, forKey: "logo")
         }
+        
+//        if item.logo != nil {
+//            guard let imageData = UIImageJPEGRepresentation(item.logo!, 1) else {
+//                
+//                // handle failed conversion
+//                print("jpg error")
+//                return
+//            }
+//            job.setValue(imageData, forKey: "logo")
+//        }
         self.results.append(job)
         
         //4
@@ -546,6 +585,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if job.logo != nil {
             cell.logo.image = job.logo
         }
+        
+        // Move all this cell configuration stuff out of here and in to the cell.
+        // Let this be nice and clean
+        //
+        // let cell = ... deque ...
+        // cell.job = jobs[indexPath.row]
+        //
+        // that's it!
 
         return cell
     }
@@ -554,6 +601,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return self.jobs.count
     }
     
+    // You can do this in the storyboard
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("job", sender: self)
     }
@@ -628,7 +676,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 upcoming.job = job
                 self.jobsCollectionView.deselectItemAtIndexPath(indexPath, animated: true)
             }
-            
+        
+//            // Use an if let to avoid force unwrapping 
+//            // Easy to chain together
+//            if let upcomingVC = segue.destinationViewController as? DetailViewController {
+//                upcomingVC.job = jobs[indexPath.row]
+//            }
+//            if let otherVC = segue.destinationViewController as? OtherViewController {
+//                otherVC.job = jobs[indexPath.row]
+//            }
             
         }
     }
@@ -669,9 +725,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.locationSearchBar.text = ""
                 self.locationButton.setImage(UIImage(named: "ic_icon_location_green"), forState: .Normal)
                 //save coordinates globally and call the build url function to build and request query
+                
+                
                 let latestLocation: AnyObject = myLocations[myLocations.count - 1]
+                // This will cause a crash on an empty myLocations array.
+                // You should use myLocations.last() instead and deal with the optional.
+                // And why is this cast to an AnyObject?  Seems unnecessary.
+                
+                
                 myLatitude = String(latestLocation.coordinate.latitude)
                 myLongitude = String(latestLocation.coordinate.longitude)
+                // Storing this as strings seems less flexible.  Probably a better idea
+                // to store the coordinate object and break it out as lat/long later
+                
                 buildURL()
             }else{
                 currentLocation = false

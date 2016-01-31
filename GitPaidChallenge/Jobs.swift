@@ -24,6 +24,14 @@ class Job: NSObject {
     var logo : UIImage?
     
     init (title: String, company: String, companyUrl: String, jobUrl: String, logoUrl: String, location: String, type: String, id: String, createdAt: String, jobDescription: String) {
+        
+        // There are about a billion parameters here.  It's way easier to pass in the 
+        // dictionary from the JSON data and do all the initialization here.
+        // Keeps you from duplicating that code.
+        // Makes the calling code easier to read.
+        // Easier to maintain when another field is added to the JSON data.  
+        // You only have to change code here, not everywhere you're calling it from.
+        
         self.title = title
         self.company = company
         self.companyUrl = companyUrl

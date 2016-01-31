@@ -14,17 +14,12 @@ class JobTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel! //label holder for the position title
     @IBOutlet weak var company: UILabel! //label holder for the company name
     
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    // add a job property here and trigger configuration off that
+    // var job: Job {
+    //      didSet {
+    //          cell.title = job.whatever
+    //          ... etc .. 
+    //   }
+    // }
 
 }

@@ -22,8 +22,9 @@ class DetailViewController: UIViewController, UIWebViewDelegate, UIGestureRecogn
     
     
     
-    var job : Job!
-    var url = NSURL()
+    var job : Job!      // I would tend to make this an optional instead of force unwrapping.
+                        // Or set this to any empty job like with url.
+    var url = NSURL()  // This is good to set an empty URL and avoid the spectre of optionals.
     
     
     override func viewDidLoad() {
@@ -42,7 +43,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate, UIGestureRecogn
         self.descriptionView.scrollView.showsHorizontalScrollIndicator = false
         
         //fill in the fields
-        self.titleLabel.text = job!.title
+        self.titleLabel.text = job!.title       // job is already unwrapped
         self.titleLabel.textColor = appGreen
         self.companyLabel.text = job!.company
         
@@ -74,6 +75,9 @@ class DetailViewController: UIViewController, UIWebViewDelegate, UIGestureRecogn
     
     //set the webview height equal to the content so that the webview is static and does not scroll but it expands the size of the scroll view so the whole view scrolls
     func webViewDidFinishLoad(webView: UIWebView) {
+        // There's no need to have the scrollview in the view hierarchy at all.
+        // The web view will handle all the scrolling and you don't have to bother
+        // with this futzing around.
         descriptionView.frame.size.height = 1
         descriptionView.frame.size = descriptionView.sizeThatFits(CGSizeZero)
         self.heightConstraint.constant = self.descriptionView.scrollView.frame.height
@@ -88,6 +92,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate, UIGestureRecogn
     
     // TODO: build in a save function to save the job to a personal list
     @IBAction func saveAction(sender: AnyObject) {
+        // Does this do anyting?  Not sure why it's here.
         let alert = UIAlertController(title: "Saved", message: "This job has been saved to your profile.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)

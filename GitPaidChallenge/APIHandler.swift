@@ -13,7 +13,10 @@ import Alamofire
 
 //using alamofire to make the api call to git and then save the results into Job objects
 public class JobCaller: NSObject {
-    var jobEntries: [Job] = []
+    var jobEntries: [Job] = []      // okay for small projects, but normally I'd have
+                // a dedicated data manager object
+                // Also, is there a reason to cache jobs like this?
+                // Why not just create and fill an empty array everytime?
     func getFeed(url: String, onComplete : (results :[Job]) -> Void) {
 
         Alamofire.request(.GET,  url).responseJSON { response in
@@ -21,6 +24,9 @@ public class JobCaller: NSObject {
             case .Success(let data):
                 self.jobEntries.removeAll()
                 for entry in (data as! NSArray) as! [NSDictionary] {
+                    // The two 'as!' statements in the line above are scarey.
+                    // If there is ever a change in the feed, the app will just blow up!
+                    
                     let data = entry
                     var title = ""
                     var company = ""
@@ -32,6 +38,8 @@ public class JobCaller: NSObject {
                     var jobUrl = ""
                     var jobDescription = ""
                     var createdAt = ""
+                    
+                    // Duplicate parsing code here is a red flag.
                     
                     if let titleTmp = data["title"] as? String {
                         title = titleTmp
@@ -72,6 +80,9 @@ public class JobCaller: NSObject {
                 
             case .Failure(let error):
                 print("Request failed with error: \(error)")
+                // on failure, you should still call the completion handler
+                // or indicate some other way that the API call failed.
+                onComplete(results: [])
             }
         }
 
